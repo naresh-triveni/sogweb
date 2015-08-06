@@ -8,13 +8,14 @@
   margin-bottom: 30px;
 }
 
-.subscription-box{
-  padding: 30px;
-  border: 1px solid #aeaeae;
-  border-radius: 10px;
+.subscribe-btn{
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 8px;
 }
 
-.subscription-box legend{
-  font-size: 15px;
-  margin-bottom: 20px;
+.subscriber-form .input-group-addon{
+  padding: 0px !important;
 }
