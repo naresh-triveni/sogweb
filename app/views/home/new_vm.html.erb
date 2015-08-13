@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <%= form_tag("/vm/create", method: "post", class: "form-horizontal vm-form") do %>
+      <legend>Create New VM</legend>
+      <div class="form-group">
+        <label class="col-sm-3">Host Name</label>
+        <div class="col-sm-9">
+          <input type="text" name="hostName" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3">Root Password</label>
+        <div class="col-sm-9">
+          <input type="password" name="inputPassword" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-9">
+          <button type="submit" class="btn btn-success btn-sm">Create</button>
+        </div>
+      </div>
+    <%- end %>
+  </div>
+</div>
