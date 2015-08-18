@@ -1,25 +1,39 @@
 <%= form_tag("/email_subscriptions/create", method: "post", class: "form-inline subscriber-form") do %>
   <div class="row">
-    <div class="col-sm-8 col-sm-offset-2 text-center">
-      <% if flash[:status] %>
-        <div class="alert alert-<%- if flash[:status] == 'error' %>danger<% else %>success<% end %>">
+    <div class="col-sm-12">
+      <% status = flash[:status] %>
+      <% if !status.nil? and status == 'error' %>
+        <div class="alert alert-<%- if status == 'error' %>danger<% else %>success<% end %>">
           <%= flash[:message] %>
         </div>
       <% end %>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2 text-center">
-      <div class="form-group" style="width:100%;">
-        <div class="input-group" style="width:100%;">
-          <%= text_field_tag :email, nil, class: "form-control", placeholder: "Enter your email address", required: true, autocomplete: "off" %>
-          <div class="input-group-addon">
-            <button type="submit" class="subscribe-btn">
-              Subscribe <i class="fa fa-long-arrow-right"></i>
-            </button>
+  <% if status == 'error' || status.nil? %>
+    <div class="row margin-bottom-10">
+      <div class="col-sm-12 text-justify">
+        If you want us to keep you updated on some cool stuff that we are working on and get a VPS instance that we are handing out free for life. Yes you heard it right, free for life, so go ahead and register. Don't worry, we will only bug you once in a while by sending simple mails which we hope will not be tackled by your spam filter.
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="form-group" style="width:100%;">
+          <div class="input-group" style="width:100%;">
+            <%= text_field_tag :email, nil, class: "form-control", placeholder: "Enter your email address", required: true, autocomplete: "off" %>
+            <div class="input-group-addon">
+              <button type="submit" class="subscribe-btn">
+                Subscribe <i class="fa fa-long-arrow-right"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  <% else %>
+    <div class="row">
+      <div class="col-sm-12 text-justify">
+        Wow, you took the first step and put faith in us. Its only going to get better from here! Thanks for giving us the opportunity and we will sure not disappoint you.
+      </div>
+    </div>
+  <%- end %>
 <%- end %>

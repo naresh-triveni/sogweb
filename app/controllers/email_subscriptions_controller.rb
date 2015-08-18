@@ -7,7 +7,6 @@ class EmailSubscriptionsController < ApplicationController
     if email_subscription.valid?
       email_subscription.save()
       flash[:status] = "success"
-      flash[:message] = "You have successfully subscribed on Sogweb"
     else
       flash[:status] = "error"
       flash[:message] = email_subscription.errors[:email][0]
