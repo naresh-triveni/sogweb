@@ -11,7 +11,11 @@
  *= require_self
  *= require_tree .
  */
-
+body {
+  font-family: 'Roboto Condensed', sans-serif !important;
+  color: #777;
+  background-color: #CEDBEC !important;
+}
 .margin-bottom-10{
   margin-bottom: 10px !important;
 }
