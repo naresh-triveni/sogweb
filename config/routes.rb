@@ -4,6 +4,8 @@ Sogweb::Application.routes.draw do
   post "email_subscriptions/create"
   get 'vm/new' => 'home#new_vm', as: :new_vm
   post "vm/create" => 'home#create_vm'
+
+  get 'testing' => 'home#testing'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

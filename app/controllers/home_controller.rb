@@ -28,7 +28,17 @@ class HomeController < ApplicationController
   end
 
   def execute(p_file, args)
-    args_str = args.join(' ')
-    dt = system("/usr/bin/python #{p_file} #{args_str}")
+    # args_str = args.join(' ')
+    # dt = system("/usr/bin/python #{p_file} #{args_str}")
+    IO.popen(["/usr/bin/python", p_file]).read
+  end
+
+  def testing()
+    script_path = "#{Rails.root}/../scripts/prototype-1.0/scripts/listing_domains.py"
+    # script_path = "#{Rails.root}/../script/test.py"
+    dt = execute(script_path, [])
+    p "IN RAILS"
+    dt = JSON.parse(dt)
+    render text: "Thanks"
   end
 end
