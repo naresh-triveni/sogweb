@@ -10,7 +10,7 @@
             Info
           </th>
         </tr>
-        <% @data['dict_2'].each do vm_info %>
+        <% @data['dict_2'].each do |vm_info| %>
           <tr>
             <td>
               <%= vm_info['name'] %>
