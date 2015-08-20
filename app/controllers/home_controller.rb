@@ -34,11 +34,13 @@ class HomeController < ApplicationController
   end
 
   def testing()
-    script_path = "#{Rails.root}/../scripts/prototype-1.0/scripts/listing_domains.py"
+    # script_path = "#{Rails.root}/../scripts/prototype-1.0/scripts/listing_domains.py"
     # script_path = "#{Rails.root}/../script/test.py"
-    dt = execute(script_path, [])
-    p "IN RAILS"
-    dt = JSON.parse(dt)
-    render text: "Thanks"
+    # dt = execute(script_path, [])
+    # p "IN RAILS"
+    # print dt
+    @data = HTTParty.get "http://localhost:8000/api/v1/vmachines/list"
+    p @data
+    @data
   end
 end

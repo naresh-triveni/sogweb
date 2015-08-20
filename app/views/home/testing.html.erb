@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Info
+          </th>
+        </tr>
+        <% @data['dict_2'].each do vm_info %>
+          <tr>
+            <td>
+              <%= vm_info['name'] %>
+            </td>
+            <td>
+              <%= vm_info['info'] %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
